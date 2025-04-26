@@ -1,0 +1,50 @@
+*{
+    margin: 0; /**/
+    padding: 0; /*Espaçamento externo*/
+    box-sizing: border-box; /* Espaçamento Interno*/
+ 
+}
+
+.box{
+    display:flex;  /*flexbox*/
+    font-size: 100px;
+    flex-direction: row nowrap; /*Direção padrão em linha*/
+    flex-wrap: wrap; /* Evita Scroll na horizontal e posiciona pra baixo*/
+    flex flex-flow:  row wrap; /**/
+    justify-content: space ::before /*Alinhamento na horizontal*/
+}
+
+.box1{
+width: 200px; /*largura*/
+height: 200px; /*altura*/
+background-color: red;
+padding: 50px; /*Espaçamento Interno*/
+
+}
+
+.box2{
+    width: 300px; /*largura*/
+    height: 300px; /*altura*/
+    background-color: green;
+    padding: 100px; /*Espaçamento Interno*/
+   
+       
+}
+
+.box3{
+    width: 400px; /*largura*/
+    height: 400px; /*altura*/
+    background-color: blue;
+    padding: 150px; /*Espaçamento Interno*/
+  
+    
+}
+
+.box4{
+    width: 500px; /*largura*/
+    height: 500px; /*altura*/
+    background-color: yellow;
+    padding: 200px; /*Espaçamento Interno*/
+   
+           
+}
