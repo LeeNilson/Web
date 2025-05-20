@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Reserva de Viagem</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      text-align: center;
+      font-size: 18px;
+    }
+    input[type="text"], input[type="date"], select {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <table>
+      <tr>
+        <th colspan="2">Formulário de Reserva de Viagem</th>
+      </tr>
+
+      <tr>
+        <td><label for="nome">Nome:</label></td>
+        <td><input type="text" id="nome" name="nome"></td>
+      </tr>
+
+      <tr>
+        <td><label for="destino">Destino:</label></td>
+        <td><input type="text" id="destino" name="destino"></td>
+      </tr>
+
+      <tr>
+        <td><label for="data_ida">Data da ida:</label></td>
+        <td><input type="date" id="data_ida" name="data_ida"></td>
+      </tr>
+
+      <tr>
+        <td><label for="data_volta">Data da volta:</label></td>
+        <td><input type="date" id="data_volta" name="data_volta"></td>
+      </tr>
+
+      <tr>
+        <td><label for="tipo_viagem">Tipo de viagem:</label></td>
+        <td>
+          <select id="tipo_viagem" name="tipo_viagem">
+            <option value="passeio">Passeio</option>
+            <option value="negocios">Negócios</option>
+            <option value="familia">Família</option>
+            <option value="outro">Outro</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="center">
+          <button type="submit">Reservar</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
