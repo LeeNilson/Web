@@ -1,0 +1,46 @@
+.minha-classe {
+  background-color: #555; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+}
+
+.minha-classe .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+.minha-classe .links {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; 
+}
+
+.minha-classe .links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; 
+}
+
+.minha-classe .links a:hover {
+  color: #ddd; 
+}
+
+.minha-classe .botao-login {
+  background-color: #007bff; 
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.minha-classe .botao-login:hover {
+  background-color: #0056b3; 
+}
