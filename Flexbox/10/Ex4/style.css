@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e2a36;
+    color: white;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-entrar {
+    background-color: #1dd1a1;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.banner {
+    height: 300px;
+    background: url('https://t4.ftcdn.net/jpg/02/55/91/67/360_F_255916794_PLWsW5bGfDkhviQ0YPrEJewDjLPdFjdV.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardapio {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulario {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.formulario input {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+}
+
+
+form {
+  font-family: sans-serif; 
+  padding: 20px;
+  background-color: #f8f8f8; 
+  border-radius: 5px; 
+  max-width: 500px; 
+  margin: 20px auto; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  text-align: center;
+}
+
+input[type="email"],
+textarea {
+  width: 100%; 
+  padding: 10px;
+  margin-bottom: 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  font-size: 16px; 
+  color: #333; 
+  text-align: center;
+}
+
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: #888;
+  text-align: center; 
+}
+
+
+input[type="email"]:focus,
+textarea:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  text-align: center; 
+}
+
+
+button[type="submit"] {
+  background-color: #34495e; 
+  color: white; 
+  padding: 10px 20px;
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px;
+  transition: background-color 0.3s ease; 
+  text-align: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #2c3e50; 
+}
+
+
+textarea {
+  resize: vertical; 
+  min-height: 100px; 
+}
+
+.formulario button {
+    padding: 10px 20px;
+    background-color: #1dd1a1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.duas-colunas {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+}
+
+.duas-colunas div {
+    width: 40%;
+}
