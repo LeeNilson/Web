@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Grid Responsivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Sistema de Grid Responsivo</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <span class="theme-icon">🌙</span>
+                Modo Escuro
+            </button>
+        </header>
+
+        <main class="main-content">
+            <section class="demo-section">
+                <h2>Demonstração do Grid de 12 Colunas</h2>
+                
+                <!-- Grid básico -->
+                <div class="grid-container">
+                    <div class="col-12">
+                        <div class="demo-box">col-12</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-6">
+                        <div class="demo-box">col-6</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="demo-box">col-6</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-4">
+                        <div class="demo-box">col-4</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="demo-box">col-4</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="demo-box">col-4</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-3">
+                        <div class="demo-box">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="demo-box">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="demo-box">col-3</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="demo-box">col-3</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="demo-box">col-2</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                    <div class="col-1">
+                        <div class="demo-box">1</div>
+                    </div>
+                </div>
+
+                <!-- Grid responsivo -->
+                <h3>Grid Responsivo</h3>
+                <div class="grid-container">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="demo-box">Responsivo</div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="demo-box">Responsivo</div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <div class="demo-box">Responsivo</div>
+                    </div>
+                </div>
+
+                <!-- Grid com offsets -->
+                <h3>Grid com Offsets</h3>
+                <div class="grid-container">
+                    <div class="col-4 col-offset-4">
+                        <div class="demo-box">col-4 offset-4</div>
+                    </div>
+                </div>
+
+                <div class="grid-container">
+                    <div class="col-3 col-offset-3">
+                        <div class="demo-box">col-3 offset-3</div>
+                    </div>
+                    <div class="col-3 col-offset-3">
+                        <div class="demo-box">col-3 offset-3</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="usage-section">
+                <h2>Como Usar</h2>
+                <div class="grid-container">
+                    <div class="col-12">
+                        <div class="usage-box">
+                            <h3>Classes Disponíveis:</h3>
+                            <ul>
+                                <li><code>.col-1</code> até <code>.col-12</code> - Colunas básicas</li>
+                                <li><code>.col-md-*</code> - Colunas para tablets (768px+)</li>
+                                <li><code>.col-lg-*</code> - Colunas para desktop (1024px+)</li>
+                                <li><code>.col-offset-*</code> - Offsets para espaçamento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Toggle do tema
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = document.querySelector('.theme-icon');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                themeIcon.textContent = '☀️';
+                themeToggle.childNodes[1].textContent = ' Modo Claro';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeToggle.childNodes[1].textContent = ' Modo Escuro';
+            }
+        });
+    </script>
+</body>
+</html>
