@@ -37,7 +37,7 @@ body.dark-theme .theme-toggle {
   border-color: #333333;
 }
 body.dark-theme .theme-toggle:hover {
-  background-color: #474747;
+  background-color: rgb(70.5, 70.5, 70.5);
 }
 
 .container {
@@ -88,7 +88,7 @@ body.dark-theme .theme-toggle:hover {
   transition: all 0.3s ease;
 }
 .theme-toggle:hover {
-  background-color: #e9ecef;
+  background-color: rgb(233.125, 236.25, 239.375);
 }
 .theme-toggle .theme-icon {
   font-size: 16px;
