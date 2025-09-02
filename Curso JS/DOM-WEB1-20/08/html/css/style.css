@@ -1,0 +1,98 @@
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 280px;
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .titulo {
+            color: #333;
+            font-size: 24px;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+        }
+
+        .descricao {
+            color: #666;
+            font-size: 16px;
+            margin: 10px 0 20px 0;
+        }
+
+        .btn-evoluir {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-evoluir:hover {
+            background: linear-gradient(45deg, #ff5252, #ffcc02);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-evoluir:active {
+            transform: translateY(0);
+        }
+
+        .ativo {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            transform: scale(1.05);
+        }
+
+        .evoluido {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+        }
+
+        .evoluido .titulo,
+        .evoluido .descricao {
+            color: white;
+        }
