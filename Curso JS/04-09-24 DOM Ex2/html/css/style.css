@@ -1,23 +1,21 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
     color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s;
 }
 
+body.dark-mode {
+    background-color: #222;
+    color: #ddd;
+}
 header, main {
     padding: 20px;
     max-width: 900px;
     margin: 0 auto;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #ddd;
 }
 
 #btn-dark-mode {
@@ -27,12 +25,21 @@ header {
     color: #84E;
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 #btn-dark-mode:hover {
     background-color: #84E;
-    color: white;
+    color: #333;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
 }
 
 .imagem-destaque img {
@@ -40,8 +47,9 @@ header {
     border-radius: 8px;
 }
 
-.info-destaque {
+.dark-mode.info-destaque {
     padding: 15px;
+    color: #fff;
     background-color: #fff;
     border-radius: 0 0 8px 8px;
     margin-top: -5px;
@@ -78,28 +86,3 @@ header {
     border-color: #84E;
 }
 
-/* Modo Escuro */
-body.dark {
-    background-color: #121212;
-    color: #f4f4f4;
-}
-
-body.dark header,
-body.dark .galeria-miniaturas h2 {
-    border-bottom-color: #444;
-}
-
-body.dark .info-destaque {
-    background-color: #1e1e1e;
-}
-
-body.dark #btn-dark-mode {
-    background-color: #84E;
-    color: white;
-}
-
-body.dark #btn-dark-mode:hover {
-    background-color: #f4f4f4;
-    color: #121212;
-    border-color: #f4f4f4;
-}
