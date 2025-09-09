@@ -1,0 +1,48 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet" type="text/css" href="css/style.css"/>
+  </head>
+  <body>
+   <h1 id="titulo">Galeria de Times</h1>
+
+  <div class="card-container" id="cardContainer">
+    <div class="card" data-color="#a40000">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Flamengo_braz_logo.svg" alt="Flamengo">
+      <h3>Flamengo</h3>
+      <p>Fundado em 1895, o Clube de Regatas do Flamengo é um dos maiores clubes do Brasil.</p>
+    </div>
+    <div class="card" data-color="#000">
+      <img src="https://upload.wikimedia.org/wikipedia/pt/b/b4/Corinthians_simbolo.png?20250902021627" alt="Corinthians">
+      <h3>Corinthians</h3>
+      <p>Fundado em 1910, o Corinthians é conhecido como 'Timão'.</p>
+    </div>
+    <div class="card" data-color="#006437">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg" alt="Palmeiras">
+      <h3>Palmeiras</h3>
+      <p>Fundado em 1914, o Palmeiras é um dos clubes mais vencedores do futebol brasileiro.</p>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button id="btnTema">🌙 Alternar Tema</button>
+    <button id="btnRemover">❌ Remover Time</button>
+    <button id="btnDuplicar">➕ Duplicar Time</button>
+  </div>
+
+  <div id="info"><strong>⚽ Clique em um time para ver sua história...</strong></div>
+
+<div class="ranking" id="ranking">
+  <h2>Ranking de Cliques</h2>
+  <ul id="listaRanking">
+    <li data-time="Flamengo">Flamengo: <span data-pontos="0">0</span> pontos</li>
+    <li data-time="Corinthians">Corinthians: <span data-pontos="0">0</span> pontos</li>
+    <li data-time="Palmeiras">Palmeiras: <span data-pontos="0">0</span> pontos</li>
+  </ul>
+</div> 
+<script src="js/script.js"></script>
+  </body>
+  </html>
