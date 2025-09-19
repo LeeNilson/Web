@@ -1,0 +1,41 @@
+.body {
+  background-color: #bcd4ff;
+}
+
+.minha-classe {
+    background-color:#446183;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.minha-classe .logo {
+    justify-content: flex-start;
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial, sans-serif; 
+    font-weight: bold; 
+    text-decoration: none;
+    margin: 0;
+}
+
+.minha-classe .links {
+    display: flex;
+    justify-content: flex-end; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+}
+
+.minha-classe .links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.minha-classe .links a:hover {
+    color: #ddd;
+}
