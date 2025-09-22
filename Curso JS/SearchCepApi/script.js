@@ -1,4 +1,3 @@
-
 document.getElementById('formCep').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -13,7 +12,6 @@ document.getElementById('formCep').addEventListener('submit', function (event) {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
     fetch(url)
         .then(response => {
-            
             if (!response.ok) {
                 throw new Error('Erro de rede ao buscar o CEP.');
             }
