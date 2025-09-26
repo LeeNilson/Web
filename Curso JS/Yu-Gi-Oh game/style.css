@@ -1,0 +1,46 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #1e1e1e;
+  color: #ddd;
+  text-align: center;
+  margin: 20px;
+}
+h1 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #ffda44;
+  text-shadow: 0 0 8px #ffda44aa;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: auto;
+  outline-offset: 3px;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px #ffda44aa;
+}
+.ativo {
+  outline: 3px solid #ffda44;
+  box-shadow: 0 0 20px 7px #ffda44dd;
+}
+button.btn-remover:hover {
+  background: #ff4c4c;
+}
+.btn-remover{
+  display:none;
+}
+#cemiterio img {
+  width: 70px;
+  height: 95px;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid #666;
+  transition: transform 0.3s ease;
+}
+#cemiterio img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px 4px #f50;
+}

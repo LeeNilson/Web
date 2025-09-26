@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="titulo">Yu-Gi-Oh! Cards Interativos</h1>
+
+<div id="container-principal" style="display:flex; justify-content:center; gap: 30px;">
+
+  <div id="cards" style="display:flex; gap:20px;">
+    <!-- Card Dragão Branco de Olhos Azuis -->
+    <div class="card" data-monstro="blueeyes" data-img="https://ms.yugipedia.com//f/f3/BlueEyesWhiteDragon-DPKB-EN-SR-1E.png" data-atk="3000" data-def="2500" tabindex="0" style="background:#b1cae3; border-radius:12px; width: 200px; padding: 15px; box-shadow: 0 8px 15px #7aaed3; cursor:pointer;">
+      <h3 style="margin-top:0; text-align:center;">Dragão Branco de Olhos Azuis</h3>
+      <div class="img-container" style="text-align:center;">
+        <img src="https://www.yugioh-card.com/lat-am/pt/wp-content/uploads/2020/08/card-float-2.png" alt="Card Virado" class="card-virado" style="width:160px; height:220px; object-fit: contain;">
+      </div>
+      <div class="stats" style="color:#fff8cc; font-weight:bold; font-size:1rem; margin-top:10px; text-align:center; display:none;">
+        <div>ATK: <span class="atk">3000</span></div>
+        <div>DEF: <span class="def">2500</span></div>
+      </div>
+      <div style="text-align:center; margin-top:15px;">
+        <button class="btn-remover" style="background:#cc3a3a; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;">Remover</button>
+      </div>
+    </div>
+
+    <!-- Card Mago Negro -->
+    <div class="card" data-monstro="darkmagician" data-img="https://ms.yugipedia.com//b/b9/DarkMagician-YGLD-EN-C-UE.png" data-atk="2500" data-def="2100" tabindex="0" style="background:#574473; border-radius:12px; width: 200px; padding: 15px; box-shadow: 0 8px 15px #81699e; cursor:pointer;">
+      <h3 style="margin-top:0; text-align:center;">Mago Negro</h3>
+      <div class="img-container" style="text-align:center;">
+        <img src="https://www.yugioh-card.com/lat-am/pt/wp-content/uploads/2020/08/card-float-2.png" alt="Card Virado" class="card-virado" style="width:160px; height:220px; object-fit: contain;">
+      </div>
+      <div class="stats" style="color:#fff8cc; font-weight:bold; font-size:1rem; margin-top:10px; text-align:center; display:none;">
+        <div>ATK: <span class="atk">2500</span></div>
+        <div>DEF: <span class="def">2100</span></div>
+      </div>
+      <div style="text-align:center; margin-top:15px;">
+        <button class="btn-remover" style="background:#cc3a3a; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;">Remover</button>
+      </div>
+    </div>
+
+    <!-- Card Kuriboh -->
+    <div class="card" data-monstro="kuriboh" data-img="https://ms.yugipedia.com//2/23/Kuriboh-SYE-EN-C-1E.jpg" data-atk="300" data-def="200" tabindex="0" style="background:#ece0ad; border-radius:12px; width: 200px; padding: 15px; box-shadow: 0 8px 15px #b5ab75; cursor:pointer;">
+      <h3 style="margin-top:0; text-align:center; color:#333;">Kuriboh</h3>
+      <div class="img-container" style="text-align:center;">
+        <img src="https://www.yugioh-card.com/lat-am/pt/wp-content/uploads/2020/08/card-float-2.png" alt="Card Virado" class="card-virado" style="width:160px; height:220px; object-fit: contain;">
+      </div>
+      <div class="stats" style="color:#333; font-weight:bold; font-size:1rem; margin-top:10px; text-align:center; display:none;">
+        <div>ATK: <span class="atk">300</span></div>
+        <div>DEF: <span class="def">200</span></div>
+      </div>
+      <div style="text-align:center; margin-top:15px;">
+        <button class="btn-remover" style="background:#cc3a3a; border:none; color:white; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;">Remover</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cemiterio" style="background:#222; color:#fffad1; border-radius: 12px; padding: 10px; width: 250px; max-height: 540px; overflow-y: auto;">
+    <h3 style="text-align:center; margin-top:0;">Cemitério</h3>
+    <div id="cemiterio-conteudo" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
+  </div>
+
+</div>
+
+<div id="info" style="margin-top: 20px; color: #ffeaaa; font-weight: bold; text-align:center;">
+  Clique em um card para revelar o monstro.
+</div>
+
+    
+<script src="script.js"></script>  
+</body>
+</html>
