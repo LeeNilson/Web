@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+      <div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <form action="https://68ddb9d3d7b591b4b78d3b7e.mockapi.io/api/v1/users" method="POST"  id="userForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" placeholder="Digite o nome" required>
+
+      <label for="avatar">URL do Avatar:</label>
+      <input type="url" id="avatar" name="avatar" placeholder="https://..." required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
