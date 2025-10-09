@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+      <div class="container">
+    <h1>Gerenciar Usuários</h1>
+
+    <!-- Formulário de inserção/edição -->
+    <form id="userForm">
+      <input type="hidden" id="userId">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" placeholder="Digite o nome" required>
+
+      <label for="avatar">URL do Avatar:</label>
+      <input type="url" id="avatar" placeholder="https://..." required>
+
+      <button type="submit" id="saveBtn">Cadastrar</button>
+      <button type="button" id="cancelEditBtn" style="display:none;">Cancelar Edição</button>
+    </form>
+
+    <!-- Busca e recarregar -->
+    <div class="actions">
+      <input type="text" id="searchInput" placeholder="Buscar usuário por nome">
+      <button id="searchBtn">Buscar</button>
+      <button id="reloadBtn">Recarregar Lista</button>
+    </div>
+
+    <!-- Lista de usuários -->
+    <div id="usersList" class="users"></div>
+
+    <!-- Botão de exclusão -->
+    <button id="deleteBtn" disabled>Excluir Usuário Selecionado</button>
+  </div>
+
+  <!-- Template do card de usuário -->
+  <template id="userCardTemplate">
+    <div class="user-card">
+      <img src="" alt="Avatar do usuário">
+      <h3>Nome do Usuário</h3>
+      <small class="user-id">ID: </small><br>
+      <small class="user-date">Criado em: </small>
+    </div>
+  </template>
+<script
+</body>
+</html>
