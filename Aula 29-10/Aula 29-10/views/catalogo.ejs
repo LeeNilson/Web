@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> <%= tituloDaPagina %></h1>
+    <% if(listaDeProdutos && listaDeProdutos.length>0) { %>
+    <% listaDeProdutos.forEach(produto => {
+     %>
+        <div class="produto">
+            <h2> <%= produto.nome %> </h2>
+            <span class="preco">R$ <%= produto.preco %></span>
+            <p>Estoque: <%= produto.estoque %></p>
+            <p>slug: <%= produto.slug %> </p>
+            <small> ID: <%= produto.id %></small>
+        </div> 
+    <% }) %>
+    <% } %>    
+    <h2>Cadastrar novo produto</h2>
+    <form action="/produtos" method="POST">
+        <input type="number" name="id" placeholder="id" required>
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="number" name="preco" placeholder="Preço" required>
+        <input type="number" name="estoque" placeholder="Estoque" min="0">
+        <input type="text" name="slug" placeholder="Slug" required>
+        <button type="submit">Cadastrar </button>
+    </form>
+</body>
+</html>

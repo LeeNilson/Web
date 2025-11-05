@@ -1,0 +1,18 @@
+[
+  {
+    "id": "3",
+    "nome": "Tenis branco",
+    "preco": 500,
+    "estoque": "1",
+    "slug": "tenis-branco",
+    "dataCriacao": "2025-10-30T01:23:47.877Z"
+  },
+  {
+    "id": "4",
+    "nome": "Teclado Preto",
+    "preco": 500,
+    "estoque": "1",
+    "slug": "teclado-preto",
+    "dataCriacao": "2025-10-30T01:24:00.461Z"
+  }
+]
