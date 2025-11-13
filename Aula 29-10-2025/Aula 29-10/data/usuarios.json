@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "email": "admin@exemplo.com",
+    "senhaHash": "$2a$10$lMycL/D7Mi8ruGwNcTpYSe7X920WXMpOOCUFgfCRVq8x4R3NNny.C",
+    "role": "admin"
+  },
+    {
+    "id": 2,
+    "email": "usuario@exemplo.com",
+    "senhaHash": "$2a$10$AfFs1kWCsbUXOumGectA/OxNOlKc2D91oOfPTwRew7DIq6uPx4q2O",
+    "role": "user"
+  }
+]
