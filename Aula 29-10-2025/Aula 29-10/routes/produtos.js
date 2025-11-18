@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Produto = require('../models/produto');
 
-// Rota para listar todos os produtos
 router.get('/produtos', (req, res) => {
     const produtos = Produto.lerTodos();
     res.render('catalogo', {
@@ -11,7 +10,7 @@ router.get('/produtos', (req, res) => {
     });
 });
 
-// NOVA ROTA: Detalhes do produto por ID (DEVE vir depois de /produtos)
+// Nova rota para detalhes do produto por ID
 router.get('/produtos/:id', (req, res) => {
     const { id } = req.params;
     const produtos = Produto.lerTodos();
@@ -20,11 +19,10 @@ router.get('/produtos/:id', (req, res) => {
     const produto = produtos.find(p => p.id === id);
     
     if (!produto) {
-        return res.status(404).send(`
-            <h1>Erro 404</h1>
-            <p>Produto com ID ${id} não foi encontrado.</p>
-            <a href="/produtos">Voltar ao catálogo</a>
-        `);
+        return res.status(404).render('erro', {
+            tituloDaPagina: "Produto não encontrado",
+            mensagem: `Produto com ID ${id} não foi encontrado.`
+        });
     }
     
     res.render('produto-detalhes', {
@@ -33,7 +31,6 @@ router.get('/produtos/:id', (req, res) => {
     });
 });
 
-// Rota para criar novo produto
 router.post('/produtos', (req, res) => {
     const {id, nome, preco, estoque, slug} = req.body;
     console.log(req.body);
@@ -42,7 +39,7 @@ router.post('/produtos', (req, res) => {
     
     res.render('catalogo', {
         tituloDaPagina: "Produto registrado!",
-        listaDeProdutos: Produto.lerTodos() // CORRIGIDO
+        listaDeProdutos: Produto.lerTodos() 
     });
 }); 
 
