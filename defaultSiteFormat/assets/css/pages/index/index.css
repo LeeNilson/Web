@@ -1,0 +1,5 @@
+@import './partials/section-1.css';
+@import './partials/section-2.css'; 
+@import './partials/section-3.css';
+@import './partials/section-4.css';
+@import '../../global/global.css';
