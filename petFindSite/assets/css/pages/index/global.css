@@ -1,0 +1,11 @@
+@import './partials/header.css';
+@import './partials/nav.css';
+@import './partials/main-content.css';
+@import './partials/photos-preview.css';
+@import './partials/pet-card.css';
+@import './partials/results-section.css';
+@import './partials/search-section.css';
+@import './partials/footer.css';
+@import '/petFindSite/assets/css/base/normalize.css';
+@import '/petFindSite/assets/css/base/variables.css';
+@import './petFindSite/assets/css/base/fonts.css';
