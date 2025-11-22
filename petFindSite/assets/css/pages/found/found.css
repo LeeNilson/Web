@@ -1,0 +1,8 @@
+@import '/petFindSite/assets/css/base/fonts.css';
+@import '/petFindSite/assets/css/base/normalize.css';
+@import '/petFindSite/assets/css/base/variables.css';
+@import '/petFindSite/assets/css/components/buttons.css';
+@import '/petFindSite/assets/css/components/navbar.css';
+@import '/petFindSite/assets/css/pages/found/container.css';
+@import '/petFindSite/assets/css/pages/found/card.css';
+@import '/petFindSite/assets/css/base/body.css';

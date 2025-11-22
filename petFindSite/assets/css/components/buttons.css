@@ -1,0 +1,22 @@
+.btn-contato {
+    width: 50%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card-btn-contato:hover {
+    transform: scale(1.05);
+}
+.btn-contato:active {
+    transform: scale(0.95);
+}
