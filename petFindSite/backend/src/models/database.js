@@ -24,23 +24,80 @@ class Database {
         this.items = [
             {
                 id: 1,
-                title: 'Carteira Marrom',
-                description: 'Carteira de couro marrom encontrada no corredor A',
+                petTitle: 'Gato',
+                description: 'Gato Preto, com mancha branca',
                 category: 'lost',
                 status: 'active',
-                location: 'Prédio A - Andar 2',
+                location: 'João Pessoa.123',
+                contact: '42999999999',
                 userId: 1,
-                createdAt: new Date('2024-11-01')
+                createdAt: new Date('2024-11-23')
             },
             {
                 id: 2,
-                title: 'Chaves Toyota',
-                description: 'Chaveiro com chaves de carro Toyota',
+                petTitle: 'cachorro',
+                description: 'Labrador marrom',
                 category: 'found',
                 status: 'active',
-                location: 'Estacionamento',
+                location: 'Prudente de Morais.686',
+                contact: '42988888888',
                 userId: 2,
-                createdAt: new Date('2024-11-10')
+                createdAt: new Date('2024-11-23')
+            },
+            {
+                id: 3,
+                petTitle: 'coelho',
+                description: 'coelho amarelo',
+                category: 'found',
+                status: 'active',
+                location: 'Marechal Deododo.956',
+                contact: '42977777777',
+                userId: 3,
+                createdAt: new Date('2024-11-23')
+            },
+            {
+                id:4,
+                petTitle: 'cavalo',
+                description: 'cavalo preto',
+                category: 'found',
+                status: 'active',
+                location: 'Manoel Ribas.299',
+                contact: '42966666666',
+                userId: 4,
+                createdAt: new Date('2024-11-23')
+            },
+            {
+                id:5,
+                petTitle: 'Cachorro pequeno',
+                description: 'poodle rosa',
+                category: 'found',
+                status: 'active',
+                location: 'Visconde de Guarapuava.1024',
+                contact: '42955555555',
+                userId: 5,
+                createdAt: new Date('2024-11-23')
+            },
+            {
+            id:6,
+                petTitle: 'Tartaruga',
+                description: 'Tartaruga verde',
+                category: 'found',
+                status: 'active',
+                location: 'Santos Dummont.777',
+                contact: '42944444444',
+                userId: 6,
+                createdAt: new Date('2024-11-23')
+            },
+        {
+            id:7,
+                petTitle: 'Bode',
+                description: 'Bode Vermelho',
+                category: 'found',
+                status: 'active',
+                location: 'Estrela da Manhã.666',
+                contact: '42933333333',
+                userId: 7,
+                createdAt: new Date('2024-11-23')
             }
         ];
 

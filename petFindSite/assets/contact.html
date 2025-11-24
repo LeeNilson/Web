@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato conosco">
+    <title>Contato - MeuSite</title>
+    <link rel="stylesheet" href="./assets/css/global.css">
+</head>
+<body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                MeuSite
+            </a>
+
+            <div class="navbar-menu" id="navbarMenu">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="contact.html" class="navbar-link active">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section py-12" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <h1 class="text-3xl font-bold text-center mb-3">Entre em Contato</h1>
+                    <p class="text-center text-gray-600 mb-8">
+                        Preencha o formulário abaixo e retornaremos em breve
+                    </p>
+                    
+                    <form class="form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label required">Nome</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                class="form-input" 
+                                placeholder="Seu nome completo"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label required">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="form-input" 
+                                placeholder="seu@email.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label required">Assunto</label>
+                            <select id="subject" class="form-select" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="info">Informações</option>
+                                <option value="support">Suporte</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label required">Mensagem</label>
+                            <textarea 
+                                id="message" 
+                                class="form-textarea" 
+                                placeholder="Escreva sua mensagem..."
+                                rows="6"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="terms" class="form-check-input" required>
+                                <label for="terms" class="form-check-label">
+                                    Aceito os termos e condições
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+
+                    <!-- Informações de Contato -->
+                    <div class="mt-8 pt-8 border-t text-center">
+                        <h3 class="font-semibold mb-4">Outras formas de contato</h3>
+                        <div class="d-flex flex-column gap-3">
+                            <p class="text-gray-600">
+                                📧 Email: contato@meusite.com
+                            </p>
+                            <p class="text-gray-600">
+                                📱 Telefone: (11) 99999-9999
+                            </p>
+                            <p class="text-gray-600">
+                                📍 Endereço: Rua Exemplo, 123 - São Paulo, SP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 MeuSite. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/contact.js"></script>
+</body>
+</html>

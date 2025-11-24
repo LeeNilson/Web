@@ -26,8 +26,8 @@ class Item {
         }
 
         // Validar descrição
-        if (!data.description || data.description.trim().length < 10) {
-            errors.push('Descrição deve ter no mínimo 10 caracteres');
+        if (!data.description || data.description.trim().length < 6) {
+            errors.push('Descrição deve ter no mínimo 6 caracteres');
         }
 
         // Validar categoria

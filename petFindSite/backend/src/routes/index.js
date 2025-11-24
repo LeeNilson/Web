@@ -7,6 +7,7 @@ const router = express.Router();
 // Importar rotas específicas
 const userRoutes = require('./userRoutes');
 const itemRoutes = require('./itemRoutes');
+const contactRoutes = require('./contactRoutes');
 
 // ========== ROTA DE TESTE ==========
 router.get('/', (req, res) => {
@@ -47,5 +48,6 @@ router.get('/', (req, res) => {
 // ========== REGISTRAR ROTAS ==========
 router.use('/users', userRoutes);
 router.use('/items', itemRoutes);
+router.use('/contact', contactRoutes);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 {
   "name": "backend-mvc",
   "version": "1.0.0",
-  "description": "Backend MVC com Node.js e Express",
+  "description": "Backend petFindSite ",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -15,7 +15,7 @@
     "api",
     "rest"
   ],
-  "author": "Seu Nome",
+  "author": "Lee Nilson Andreas Dias de Moura",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
