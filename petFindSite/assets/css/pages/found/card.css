@@ -4,3 +4,14 @@
     align-items: center;    
     text-align: center;
 }
+
+img {
+    width: 600px; 
+    height: 600px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    margin: 20px; 
+    background-color: #fff; 
+}
