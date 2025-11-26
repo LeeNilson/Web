@@ -6,6 +6,6 @@
 @import './pages/index/partials/results-section.css';
 @import './pages/index/partials/search-section.css';
 @import './pages/index/partials/footer.css';
-@import '/petFindSite/assets/css/base/normalize.css';
-@import '/petFindSite/assets/css/base/variables.css';
+@import '/assets/css/base/normalize.css';
+@import '/assets/css/base/variables.css';
 @import './base/fonts.css';
