@@ -1,7 +1,7 @@
 {
-  "name": "backend-mvc",
+  "name": "petfind-api",
   "version": "1.0.0",
-  "description": "Backend petFindSite ",
+  "description": "API REST para sistema PetFind - Encontre seu pet perdido",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,21 +9,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "nodejs",
-    "express",
-    "mvc",
+    "pet",
+    "finder",
+    "lost",
+    "found",
     "api",
     "rest"
   ],
-  "author": "Lee Nilson Andreas Dias de Moura",
+  "author": "",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
     "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "express": "^4.21.2",
-    "mysql2": "^3.15.3"
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.2"
   }
 }

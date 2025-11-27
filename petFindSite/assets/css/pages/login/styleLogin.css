@@ -48,7 +48,7 @@ body {
   box-sizing: border-box;
 }
 
-.container button {
+.button-login {
   width: 100%;
   padding: 10px;
   background: var(--gradient-button);
@@ -60,7 +60,7 @@ body {
   transition: background 0.3s ease;
 }
 
-.container button:hover {
+.button-login:hover {
   background: var(--gradient-button-hover);
 }
 

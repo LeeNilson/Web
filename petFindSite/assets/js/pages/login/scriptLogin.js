@@ -2,7 +2,7 @@ const password = document.getElementById('senha');
 const user = document.getElementById('usuario');
 const button = document.getElementById('btn');
 
-document.getElementById('btn').addEventListener('submit', function (event) {
+document.getElementById('btn').addEventListener('click', function (event) {
     event.preventDefault();
     const userValue = user.value;
     const passwordValue = password.value;
@@ -10,34 +10,26 @@ document.getElementById('btn').addEventListener('submit', function (event) {
     if (userValue === 'admin' && passwordValue === 'admin') {
         alert("Autenticação bem-sucedida!");
         console.log("Autenticação bem-sucedida!");
-      
+        // Redireciona para a página de registro
+        window.location.href = 'registration.html';
     } else {
         alert("Credenciais incorretas. Tente novamente.");
         console.log("Falha na autenticação.");
-        window.console.log("Failed authentication");
     }
 });
 
 password.addEventListener('keyup', function (event) {
     if (event.target.value === 'admin') {
-        console.log("Sucessful authentication");
-        window.console.log("Sucessful authentication");
-        
-
+        console.log("Senha correta");
     } else {
-        console.log("Failed authentication");
-        window.console.log("Failed authentication");
-        
+        console.log("Senha incorreta");
     }
 });
 
 user.addEventListener('keyup', function (event) {
     if (event.target.value === 'admin') {
-        console.log("Sucessful authentication");
-        
+        console.log("Usuário correto");
     } else {
-        console.log("Failed authentication");
-
+        console.log("Usuário incorreto");
     }
 });
-

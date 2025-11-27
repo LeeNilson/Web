@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFind - Encontre seu Pet</title>
+    <link rel="stylesheet" href="/assets/css/pages/registration/registration.css">
+    <link rel="icon" href="images/petFindIcon.jpg" type="images/jpg">
+</head>
+<body>
+    
+<nav class="navbar">
+    <div class="navbar-logo">
+        <a href="index.html">Achar meu Pet</a>
+    </div>
+    <ul class="navbar-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="found.html">Pets Encontrados</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="contact.html">Contato</a></li>
+    </ul>
+</nav>
+<br>
+    
+    <div class="container">
+        <header>
+            <h1>🐾 PetFind</h1>
+            <p class="subtitle">Ajudando pets perdidos a voltarem para casa</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('list')">Ver Pets</button>
+            <button class="tab-btn" onclick="switchTab('register')">Cadastrar Pet</button>
+        </div>
+
+        <!-- Aba de listagem -->
+        <div id="list-tab" class="tab-content active">
+            <div class="filters">
+                <button id="filter-all" class="filter-btn active">Todos</button>
+                <button id="filter-lost" class="filter-btn">Perdidos</button>
+                <button id="filter-found" class="filter-btn">Encontrados</button>
+            </div>
+
+            <div id="loader">
+                <div class="loader-spinner"></div>
+                <p>Carregando...</p>
+            </div>
+
+            <div id="pets-container">
+                <!-- Pets serão carregados aqui via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Aba de cadastro -->
+        <div id="register-tab" class="tab-content">
+            <form id="create-pet-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome do Pet *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="species">Espécie *</label>
+                        <select id="species" name="species" required>
+                            <option value="">Selecione...</option>
+                            <option value="cachorro">Cachorro</option>
+                            <option value="gato">Gato</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="breed">Raça</label>
+                        <input type="text" id="breed" name="breed">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Cor</label>
+                        <input type="text" id="color" name="color">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="size">Porte</label>
+                        <select id="size" name="size">
+                            <option value="">Selecione...</option>
+                            <option value="pequeno">Pequeno</option>
+                            <option value="medio">Médio</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status *</label>
+                        <select id="status" name="status" required>
+                            <option value="">Selecione...</option>
+                            <option value="perdido">Perdido</option>
+                            <option value="encontrado">Encontrado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descrição</label>
+                    <textarea id="description" name="description" placeholder="Conte mais sobre o pet, características especiais, onde foi visto..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Local</label>
+                    <input type="text" id="location" name="location" placeholder="Bairro, cidade - Estado">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact_name">Seu Nome</label>
+                        <input type="text" id="contact_name" name="contact_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_phone">Telefone *</label>
+                        <input type="tel" id="contact_phone" name="contact_phone" required placeholder="(00) 00000-0000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact_email">E-mail</label>
+                    <input type="email" id="contact_email" name="contact_email">
+                </div>
+
+                <div class="form-group">
+                    <label for="photo_url">URL da Foto</label>
+                    <input type="url" id="photo_url" name="photo_url" placeholder="https://...">
+                </div>
+
+                <button type="submit" class="submit-btn">Cadastrar Pet</button>
+            </form>
+        </div>
+    </div>
+    <script src="/assets/js/pages/registration/registration.js"></script>
+    <script src="/backend/api.js"></script>
+</body>
+</html>

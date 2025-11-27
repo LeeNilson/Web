@@ -9,3 +9,4 @@
 @import '/assets/css/base/normalize.css';
 @import '/assets/css/base/variables.css';
 @import './base/fonts.css';
+@import '/assets/css/components/partials/registration-section.css';
