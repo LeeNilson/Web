@@ -14,16 +14,19 @@ document.getElementById('btn').addEventListener('submit', function (event) {
     } else {
         alert("Credenciais incorretas. Tente novamente.");
         console.log("Falha na autenticação.");
+        window.console.log("Failed authentication");
     }
 });
 
 password.addEventListener('keyup', function (event) {
     if (event.target.value === 'admin') {
         console.log("Sucessful authentication");
+        window.console.log("Sucessful authentication");
         
 
     } else {
         console.log("Failed authentication");
+        window.console.log("Failed authentication");
         
     }
 });
