@@ -2,7 +2,7 @@ const password = document.getElementById('senha');
 const user = document.getElementById('usuario');
 const button = document.getElementById('btn');
 
-document.getElementById('formLogin').addEventListener('submit', function (event) {
+document.getElementById('btn').addEventListener('submit', function (event) {
     event.preventDefault();
     const userValue = user.value;
     const passwordValue = password.value;

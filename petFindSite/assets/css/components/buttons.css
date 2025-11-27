@@ -1,4 +1,4 @@
-.btn-contato {
+.btn-contact {
     width: 50%;
     padding: 0.8rem;
     margin-top: 1rem;
@@ -14,10 +14,10 @@
     margin-bottom: auto;
 }
 
-.card-btn-contato:hover {
+.card-btn-contact:hover {
     transform: scale(1.05);
 }
-.btn-contato:active {
+.btn-contact:active {
     transform: scale(0.95);
 }
 

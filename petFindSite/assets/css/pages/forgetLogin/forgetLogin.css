@@ -1,7 +1,7 @@
 @import '/assets/css/global.css';
-@import '/petFindSite/assets/css/base/variables.css';
-@import '/petFindSite/assets/css/base/normalize.css';
-@import '/petFindSite/assets/css/base/fonts.css';
+@import '/assets/css/base/variables.css';
+@import '/assets/css/base/normalize.css';
+@import '/assets/css/base/body.css';
 @import '/assets/css/pages/index/partials/footer.css';
 @import '/assets/css/components/navbar.css';
 @import '/assets/css/pages/index/partials/main-content.css';

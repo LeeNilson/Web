@@ -1,10 +1,8 @@
-@import '/petFindSite/assets/css/base/fonts.css';
 @import '/assets/css/base/normalize.css';
-@import '/petFindSite/assets/css/base/variables.css';
-@import '/petFindSite/assets/css/components/buttons.css';
+@import '/assets/css/base/variables.css';
+@import '/assets/css/components/buttons.css';
 @import '/assets/css/components/navbar.css';
-@import '/petFindSite/assets/css/pages/found/container.css';
-@import './container.css';
+@import '/assets/css/components/container.css';
 @import '/assets/css/base/body.css';
 @import '/assets/css/pages/found/card.css';
 @import '/assets/css/components/partials/main-content.css';

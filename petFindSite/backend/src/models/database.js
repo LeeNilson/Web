@@ -1,6 +1,3 @@
-// ========== SIMULAÇÃO DE BANCO DE DADOS EM MEMÓRIA ==========
-// Em produção, você usaria um banco real como PostgreSQL, MySQL ou MongoDB
-
 class Database {
     constructor() {
         // Dados armazenados em memória
@@ -248,5 +245,4 @@ class Database {
     }
 }
 
-// Exportar instância única (Singleton)
 module.exports = new Database();

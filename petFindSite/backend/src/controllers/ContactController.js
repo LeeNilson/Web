@@ -1,5 +1,7 @@
 // ========== CONTROLLER: CONTACT (Contato) ==========
 
+const { put } = require("../routes/contactRoutes");
+
 class ContactController {
     
     // ========== POST: Enviar mensagem de contato ==========
@@ -30,7 +32,7 @@ class ContactController {
                 });
             }
 
-            // Simular salvamento (em produção, salve no banco ou envie email)
+            // Simular salvamento 
             const contactData = {
                 id: Date.now(), // ID temporário
                 name,
@@ -41,7 +43,7 @@ class ContactController {
                 createdAt: new Date()
             };
 
-            // Log no servidor (em produção, salve no banco)
+            // Log no servidor 
             console.log('📧 Nova mensagem de contato recebida:');
             console.log('Nome:', name);
             console.log('Email:', email);
@@ -82,6 +84,43 @@ class ContactController {
             });
         }
     }
+
+    // ========== PUT: Atualizar mensagem ==========
+    async put(req, res) {
+        try {
+            res.status(200).json({
+                success: true,
+                message: 'Funcionalidade disponível em breve',
+                data: []
+            });
+        } catch (error) {
+            res.status(500).json({
+                success: false,
+                message: 'Erro ao buscar mensagens',
+                error: error.message
+            });
+        }
+    }
+
+    // ========== DELETE: Deletar mensagem ==========
+    async delete(req, res) {
+        try {
+            // Em produção, buscar do banco de dados
+            res.status(200).json({
+                success: true,
+                message: 'Funcionalidade disponível em breve',
+                data: []
+            });
+        } catch (error) {
+            res.status(500).json({
+                success: false,
+                message: 'Erro ao buscar mensagens',
+                error: error.message
+            });
+        }
+    }
 }
+
+
 
 module.exports = new ContactController();
