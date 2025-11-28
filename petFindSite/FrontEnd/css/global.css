@@ -1,0 +1,13 @@
+@import 'header.css';
+@import 'navbar.css';
+@import 'main-content.css';
+@import 'photos-preview.css';
+@import 'pet-card.css';
+@import 'results-section.css';
+@import 'search-section.css';
+@import 'footer.css';
+@import 'normalize.css';
+@import 'variables.css';
+@import 'fonts.css';
+@import'/FrontEnd/css/card.css';
+@import '/FrontEnd/css/buttons.css';

@@ -1,0 +1,54 @@
+@import'/FrontEnd/css/global.css';
+
+.main-content {
+    max-width: 500px;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.main-content h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 800px; 
+    height: auto;
+}
+
+.search-form input,
+.search-form textarea {
+    width: 100%;
+    box-sizing: border-box; 
+    margin-bottom: 15px; 
+    padding: 10px; 
+}
+
+.main-content button {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
