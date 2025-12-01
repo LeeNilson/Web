@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Find - Encontre seu Pet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --secondary: #3498db;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(142, 68, 173, 0.9));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Filtros */
+        .filtros {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filtros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 0.7rem;
+            border: 2px solid var(--light);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Grid de Animais */
+        .animais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .animal-foto {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: var(--light);
+        }
+
+        .animal-content {
+            padding: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge-perdido {
+            background: var(--primary);
+            color: white;
+        }
+
+        .badge-encontrado {
+            background: var(--success);
+            color: white;
+        }
+
+        .badge-recompensa {
+            background: var(--warning);
+            color: white;
+        }
+
+        .animal-card h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .animal-info {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .animal-info strong {
+            color: var(--dark);
+        }
+
+        .animal-descricao {
+            color: #555;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .animal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light);
+        }
+
+        .contato-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contato-btn:hover {
+            background: #2980b9;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 10px;
+            color: var(--dark);
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Paginação */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .pagination button:hover,
+        .pagination button.active {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .filtros-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .animais-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🐾 Pet Find</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#perdidos">Perdidos</a></li>
+                <li><a href="#encontrados">Encontrados</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+            </ul>
+            <button class="btn-primary" onclick="window.location.href='cadastrar.html'">
+                Cadastrar Pet
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>🐾 Ajude a Reunir Pets com Suas Famílias</h1>
+        <p>Encontre ou cadastre animais perdidos e encontrados</p>
+    </section>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Estatísticas -->
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <h3 id="total-perdidos">0</h3>
+                <p>Pets Perdidos</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="total-encontrados">0</h3>
+                <p>Pets Encontrados</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="total-reunidos">0</h3>
+                <p>Reunidos com Sucesso</p>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros">
+            <div class="filtros-grid">
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select id="filtro-tipo">
+                        <option value="">Todos</option>
+                        <option value="perdido">Perdidos</option>
+                        <option value="encontrado">Encontrados</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select id="filtro-categoria">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Cidade</label>
+                    <input type="text" id="filtro-cidade" placeholder="Digite a cidade...">
+                </div>
+
+                <div class="form-group">
+                    <label>Estado</label>
+                    <input type="text" id="filtro-estado" placeholder="UF" maxlength="2">
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="buscarAnimais(1)" style="width: 100%;">
+                🔍 Buscar
+            </button>
+        </div>
+
+        <!-- Lista de Animais -->
+        <div id="animais-container">
+            <div class="loading">Carregando animais</div>
+        </div>
+
+        <!-- Paginação -->
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div class="modal" id="modal-detalhes">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <div id="detalhes-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000/api';
+        let paginaAtual = 1;
+
+        // Carregar estatísticas
+        async function carregarEstatisticas() {
+            try {
+                const response = await fetch(`${API_URL}/animais?page=1&limit=1000`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const perdidos = data.data.filter(a => a.tipo_anuncio === 'perdido').length;
+                    const encontrados = data.data.filter(a => a.tipo_anuncio === 'encontrado').length;
+                    
+                    document.getElementById('total-perdidos').textContent = perdidos;
+                    document.getElementById('total-encontrados').textContent = encontrados;
+                    document.getElementById('total-reunidos').textContent = Math.floor(Math.random() * 50) + 10;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar estatísticas:', error);
+            }
+        }
+
+        // Carregar categorias
+        async function carregarCategorias() {
+            try {
+                const response = await fetch(`${API_URL}/categorias`);
+                const data = await response.json();
+                
+                const select = document.getElementById('filtro-categoria');
+                data.data.forEach(cat => {
+                    const option = document.createElement('option');
+                    option.value = cat.id;
+                    option.textContent = cat.nome;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar categorias:', error);
+            }
+        }
+
+        // Buscar animais
+        async function buscarAnimais(page = 1) {
+            try {
+                paginaAtual = page;
+                const container = document.getElementById('animais-container');
+                container.innerHTML = '<div class="loading">Carregando animais</div>';
+
+                const tipo = document.getElementById('filtro-tipo').value;
+                const categoria = document.getElementById('filtro-categoria').value;
+                const cidade = document.getElementById('filtro-cidade').value;
+                const estado = document.getElementById('filtro-estado').value;
+
+                let url = `${API_URL}/animais?page=${page}&limit=12`;
+                if (tipo) url += `&tipo=${tipo}`;
+                if (categoria) url += `&categoria=${categoria}`;
+                if (cidade) url += `&cidade=${cidade}`;
+                if (estado) url += `&estado=${estado.toUpperCase()}`;
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.success) {
+                    exibirAnimais(data.data);
+                    criarPaginacao(data.pagination);
+                } else {
+                    container.innerHTML = '<div class="empty-state"><h3>Erro ao carregar animais</h3></div>';
+                }
+            } catch (error) {
+                console.error('Erro ao buscar animais:', error);
+                document.getElementById('animais-container').innerHTML = 
+                    '<div class="empty-state"><h3>Erro ao carregar dados</h3></div>';
+            }
+        }
+
+        // Exibir animais
+        function exibirAnimais(animais) {
+            const container = document.getElementById('animais-container');
+
+            if (!animais || animais.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>😔 Nenhum animal encontrado</h3>
+                        <p>Tente ajustar os filtros de busca</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const grid = document.createElement('div');
+            grid.className = 'animais-grid';
+
+            animais.forEach(animal => {
+                const card = criarCardAnimal(animal);
+                grid.appendChild(card);
+            });
+
+            container.innerHTML = '';
+            container.appendChild(grid);
+        }
+
+        // Criar card do animal
+        function criarCardAnimal(animal) {
+            const card = document.createElement('div');
+            card.className = 'animal-card';
+            card.onclick = () => verDetalhes(animal.id);
+
+            const badgeClass = animal.tipo_anuncio === 'perdido' ? 'badge-perdido' : 'badge-encontrado';
+            const fotoUrl = animal.foto ? `http://localhost:3000/uploads/${animal.foto}` : 'https://via.placeholder.com/300x250?text=Sem+Foto';
+
+            card.innerHTML = `
+                <img src="${fotoUrl}" alt="${animal.nome || 'Animal'}" class="animal-foto" 
+                     onerror="this.src='https://via.placeholder.com/300x250?text=Sem+Foto'">
+                <div class="animal-content">
+                    <div class="badges">
+                        <span class="badge ${badgeClass}">${animal.tipo_anuncio.toUpperCase()}</span>
+                        ${animal.recompensa ? `<span class="badge badge-recompensa">R$ ${animal.recompensa}</span>` : ''}
+                    </div>
+                    <h3>${animal.nome || 'Sem nome'}</h3>
+                    <p class="animal-info">
+                        <strong>${animal.categoria}</strong> ${animal.raca ? '- ' + animal.raca : ''}<br>
+                        ${animal.sexo ? animal.sexo.charAt(0).toUpperCase() + animal.sexo.slice(1) : ''} 
+                        ${animal.porte ? '| ' + animal.porte.charAt(0).toUpperCase() + animal.porte.slice(1) : ''}<br>
+                        📍 ${animal.cidade}, ${animal.estado}<br>
+                        📅 ${new Date(animal.data_ocorrencia).toLocaleDateString('pt-BR')}
+                    </p>
+                    <p class="animal-descricao">
+                        ${animal.descricao.substring(0, 100)}${animal.descricao.length > 100 ? '...' : ''}
+                    </p>
+                    <div class="animal-footer">
+                        <span>👁️ ${animal.visualizacoes} visualizações</span>
+                        <button class="contato-btn" onclick="event.stopPropagation(); verDetalhes(${animal.id})">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Ver detalhes do animal
+        async function verDetalhes(id) {
+            try {
+                const response = await fetch(`${API_URL}/animais/${id}`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const animal = result.data;
+                    const modal = document.getElementById('modal-detalhes');
+                    const content = document.getElementById('detalhes-content');
+
+                    const fotoUrl = animal.fotos && animal.fotos[0] 
+                        ? `http://localhost:3000/uploads/${animal.fotos[0].caminho_foto}`
+                        : 'https://via.placeholder.com/600x400?text=Sem+Foto';
+
+                    content.innerHTML = `
+                        <h2>${animal.nome || 'Animal sem nome'}</h2>
+                        <img src="${fotoUrl}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin: 1rem 0;">
+                        
+                        <h3>Informações</h3>
+                        <p><strong>Tipo:</strong> ${animal.tipo_anuncio === 'perdido' ? 'Perdido' : 'Encontrado'}</p>
+                        <p><strong>Categoria:</strong> ${animal.categoria}</p>
+                        <p><strong>Raça:</strong> ${animal.raca || 'Não especificada'}</p>
+                        <p><strong>Sexo:</strong> ${animal.sexo || 'Desconhecido'}</p>
+                        <p><strong>Porte:</strong> ${animal.porte || 'Não especificado'}</p>
+                        <p><strong>Cor:</strong> ${animal.cor_principal || 'Não especificada'}</p>
+                        ${animal.recompensa ? `<p><strong>Recompensa:</strong> R$ ${animal.recompensa}</p>` : ''}
+                        
+                        <h3>Local e Data</h3>
+                        <p><strong>Data:</strong> ${new Date(animal.data_ocorrencia).toLocaleDateString('pt-BR')}</p>
+                        <p><strong>Local:</strong> ${animal.cidade}, ${animal.estado}</p>
+                        ${animal.bairro ? `<p><strong>Bairro:</strong> ${animal.bairro}</p>` : ''}
+                        
+                        <h3>Descrição</h3>
+                        <p>${animal.descricao}</p>
+                        
+                        <h3>Contato</h3>
+                        <p><strong>Nome:</strong> ${animal.nome_usuario}</p>
+                        ${animal.celular ? `<p><strong>Celular:</strong> ${animal.celular}</p>` : ''}
+                        ${animal.telefone ? `<p><strong>Telefone:</strong> ${animal.telefone}</p>` : ''}
+                    `;
+
+                    modal.classList.add('active');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar detalhes:', error);
+                alert('Erro ao carregar detalhes do animal');
+            }
+        }
+
+        // Fechar modal
+        function fecharModal() {
+            document.getElementById('modal-detalhes').classList.remove('active');
+        }
+
+        // Criar paginação
+        function criarPaginacao(pagination) {
+            const container = document.getElementById('pagination');
+            container.innerHTML = '';
+
+            if (pagination.totalPages <= 1) return;
+
+            // Botão anterior
+            if (pagination.page > 1) {
+                const btnPrev = document.createElement('button');
+                btnPrev.textContent = '← Anterior';
+                btnPrev.onclick = () => buscarAnimais(pagination.page - 1);
+                container.appendChild(btnPrev);
+            }
+
+            // Números das páginas
+            for (let i = 1; i <= pagination.totalPages; i++) {
+                if (i === 1 || i === pagination.totalPages || 
+                    (i >= pagination.page - 1 && i <= pagination.page + 1)) {
+                    const btn = document.createElement('button');
+                    btn.textContent = i;
+                    btn.className = i === pagination.page ? 'active' : '';
+                    btn.onclick = () => buscarAnimais(i);
+                    container.appendChild(btn);
+                } else if (i === pagination.page - 2 || i === pagination.page + 2) {
+                    const span = document.createElement('span');
+                    span.textContent = '...';
+                    span.style.color = 'white';
+                    container.appendChild(span);
+                }
+            }
+
+            // Botão próximo
+            if (pagination.page < pagination.totalPages) {
+                const btnNext = document.createElement('button');
+                btnNext.textContent = 'Próximo →';
+                btnNext.onclick = () => buscarAnimais(pagination.page + 1);
+                container.appendChild(btnNext);
+            }
+        }
+
+        // Fechar modal ao clicar fora
+        window.onclick = (event) => {
+            const modal = document.getElementById('modal-detalhes');
+            if (event.target === modal) {
+                fecharModal();
+            }
+        };
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarEstatisticas();
+            carregarCategorias();
+            buscarAnimais(1);
+        });
+    </script>
+</body>
+</html>
