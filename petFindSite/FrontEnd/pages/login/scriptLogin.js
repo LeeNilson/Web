@@ -9,7 +9,7 @@ btn.addEventListener('click', function (event) {
     const passwordValue = passwordInput.value;
 
    
-    fetch('/petfind-api/data/usuarios.json')
+    fetch('http://localhost:3000/tutores')
         .then(response => {
             
             if (!response.ok) {
@@ -49,3 +49,4 @@ function logTyping(event) {
     
     console.log("Digitando...", event.target.value);
 }
+
