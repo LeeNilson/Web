@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en,pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achar meu Pet</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="/FrontEnd/images/petFindIcon.jpg" type="images/jpg">
+    <link rel="icon" href="/FrontEnd/images/petFindIcon.jpg" type="image/jpeg">
 </head>
 <body>
 <nav class="navbar">
@@ -19,24 +19,28 @@
         <li><a href="/FrontEnd/pages/contact/contact.html">Contato</a></li>
     </ul>
 </nav>
+
 <header class="header">
     <h1>Bem-vindo ao Achar meu Pet</h1>
     <p>Encontre seu amigo perdido ou ajude a reunir pets com seus donos.</p>    
 </header>
 
+<main>
     <section class="search-section">
         <h2>Buscar Pets Perdidos</h2>
+        <br>
         <form id="search-form">
             <input type="text" id="search-input" placeholder="Digite o nome ou características do pet" required>
             <button type="submit">Buscar</button>
         </form>
     </section>
+    
     <section class="results-section">
         <h2>Resultados da Busca</h2>
         <div id="results-container">
             <!-- Resultados serão exibidos aqui -->
         </div>
-    </section>  
+    </section>
 </main>
 
 <footer class="footer">
