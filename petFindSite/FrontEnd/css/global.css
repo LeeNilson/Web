@@ -11,3 +11,21 @@
 @import 'fonts.css';
 @import'/FrontEnd/css/card.css';
 @import '/FrontEnd/css/buttons.css';
+
+.results-container-button {
+
+    width: 50%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}

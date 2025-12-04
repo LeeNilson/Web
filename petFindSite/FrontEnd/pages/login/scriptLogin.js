@@ -1,44 +1,51 @@
-const password = document.getElementById('senha');
-const user = document.getElementById('usuario');
-const button = document.getElementById('btn');
+const passwordInput = document.getElementById('senha');
+const userInput = document.getElementById('usuario');
+const btn = document.getElementById('btn');
 
-document.getElementById('btn').addEventListener('submit', function (event) {
+btn.addEventListener('click', function (event) {
     event.preventDefault();
-    const userValue = user.value;
-    const passwordValue = password.value;
 
-    if (userValue === 'admin' && passwordValue === 'admin') {
-        alert("Autenticação bem-sucedida!");
-        console.log("Autenticação bem-sucedida!");
-        window.location.href = 'registration.html';
-      
-    } else {
-        alert("Credenciais incorretas. Tente novamente.");
-        console.log("Falha na autenticação.");
-        window.console.log("Failed authentication");
-    }
+    const userValue = userInput.value;
+    const passwordValue = passwordInput.value;
+
+   
+    fetch('/petfind-api/data/usuarios.json')
+        .then(response => {
+            
+            if (!response.ok) {
+                throw new Error("Erro ao carregar arquivo de usuários");
+            }
+            return response.json();
+        })
+        .then(usuarios => {
+           
+            const usuarioEncontrado = usuarios.find(user => 
+                user.email === userValue && user.senha === passwordValue
+            );
+
+            if (usuarioEncontrado) {
+                // SUCESSO
+                alert("Autenticação bem-sucedida!");
+                console.log("Usuário logado:", usuarioEncontrado.email);
+                
+                // Redirecionamento
+                window.location.href = '/FrontEnd/pages/found/found.html';
+            } else {
+                // FALHA
+                alert("Email ou senha incorretos.");
+                console.log("Falha na autenticação.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro na requisição:", error);
+            alert("Erro no sistema de login.");
+        });
 });
 
-password.addEventListener('keyup', function (event) {
-    if (event.target.value === 'admin') {
-        console.log("Sucessful authentication");
-        window.console.log("Sucessful authentication");
-        
+passwordInput.addEventListener('keyup', logTyping);
+userInput.addEventListener('keyup', logTyping);
 
-    } else {
-        console.log("Failed authentication");
-        window.console.log("Failed authentication");
-        
-    }
-});
-
-user.addEventListener('keyup', function (event) {
-    if (event.target.value === 'admin') {
-        console.log("Sucessful authentication");
-        
-    } else {
-        console.log("Failed authentication");
-
-    }
-});
-
+function logTyping(event) {
+    
+    console.log("Digitando...", event.target.value);
+}
