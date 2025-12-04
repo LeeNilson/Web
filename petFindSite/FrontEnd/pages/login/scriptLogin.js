@@ -29,7 +29,7 @@ btn.addEventListener('click', function (event) {
                 console.log("Usuário logado:", usuarioEncontrado.email);
                 
                 // Redirecionamento
-                window.location.href = '/FrontEnd/pages/found/found.html';
+                window.location.href = '/FrontEnd/pages/report/report.html';
             } else {
                 // FALHA
                 alert("Email ou senha incorretos.");
