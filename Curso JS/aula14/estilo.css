@@ -1,0 +1,31 @@
+body{
+    background-color: #08a7a7;
+    font: normal 15 pt Arial;
+}
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 4px 4px 10px black;
+}
+div{
+    text-align: center;
+    padding: 8px;
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Garante que a imagem não fique esticada */
+  border-radius: 50%;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
