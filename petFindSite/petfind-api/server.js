@@ -1,16 +1,28 @@
-const express = require("express");
-const cors = require("cors");
+const { Pool } = require('pg');
+const express = require('express');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const port = 3000;
 
-app.use("/tutores", require("./src/routes/tutorRoutes"));
-app.use("/contatos", require("./src/routes/contatoRoutes"));
-app.use("/enderecos", require("./src/routes/enderecoRoutes"));
-app.use("/animais", require("./src/routes/animalRoutes"));
-app.use("/fotos", require("./src/routes/fotoRoutes"));
-const authRoutes = require("./src/routes/authRoutes");
-app.use("/auth", authRoutes);
+// Configuração da conexão usando as variáveis de ambiente do Docker Compose
+const pool = new Pool({
+  host: process.env.DB_HOST,      // IMPORTANTE: Isso será 'db'
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+});
 
-app.listen(3000, () => console.log("API rodando na porta 3000 /  http://localhost:3000/animais"));
+app.get('/', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT NOW()');
+    res.send(`Hora do Banco de Dados: ${result.rows[0].now}`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao conectar no banco');
+  }
+});
+
+app.listen(port, () => {
+  console.log(`App rodando na porta ${port}`);
+});

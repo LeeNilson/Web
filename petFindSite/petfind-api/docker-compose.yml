@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Serviço 1: Sua aplicação Node
+  app:
+    build: .
+    ports:
+      - "3000:3000" # Mapeia porta 3000 do host para 3000 do container
+    environment:
+      - DB_HOST=POSTGRES
+      - DB_USER=petfind_user
+      - DB_PASS=1453
+      - DB_NAME=pet_find_db
+      - DB_PORT=5432
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app # "Hot reload": espelha sua pasta local no container
+      - /usr/src/app/node_modules # Evita sobrescrever node_modules do container
+
+  # Serviço 2: Banco de Dados Postgres
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: petfind_user
+      POSTGRES_PASSWORD: 1453
+      POSTGRES_DB: pet_find_db
+    ports:
+      - "5432:5432" # Permite acessar o banco via ferramenta externa (DBeaver, etc)
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Persistência: salva os dados mesmo se desligar o container
+
+# Define o volume para persistência de dados
+volumes:
+  pgdata:
