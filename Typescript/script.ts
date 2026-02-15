@@ -70,8 +70,8 @@ class greeter1{
         this.greeting = message;
     }
     greet(){
-        return "Sejam bem vindos, " + this.greeting;
+        return "Seja bem vindo, " + this.greeting;
     }
 }
-let greeter = new greeter1("CDFs");
+let greeter = new greeter1("Usuário");
 console.log(greeter.greet());

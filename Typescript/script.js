@@ -1,3 +1,4 @@
+"use strict";
 /*function soma(a:number,b:number){
     return a + b;
 }
@@ -36,34 +37,43 @@ listarProdutos(produtos);
 
 function normalizarTexto(texto:any){
     return texto.trim().toLowerCase(); // trim() - remove espaços do início E do fim
-} */
-var input = document.querySelector('input');
-var p = document.querySelector('p');
+}
+
+const input = document.querySelector('input');
+const p = document.querySelector('p');
+
 if (input) {
-    var total = localStorage.getItem('total');
-    input.value = total || '0';
-    calcularGanho(Number(input === null || input === void 0 ? void 0 : input.valueAsNumber) || 0);
+  const total = localStorage.getItem('total');
+  input.value = total || '0';
+  calcularGanho(Number(input?.valueAsNumber)|| 0);
 }
-function calcularGanho(value) {
-    if (p) {
-        var resultado = value + 100 - (value * 0.2);
-        p.innerText = "ganho total: ".concat(resultado);
-    }
+
+function calcularGanho(value:number) {
+if (p) {
+    const resultado = value + 100 - (value * 0.2);
+    p.innerText = `ganho total: ${resultado}`;
 }
+}
+
 function totalMudou() {
-    var value = Number(input === null || input === void 0 ? void 0 : input.valueAsNumber);
-    localStorage.setItem('total', value.toString());
-    calcularGanho(value);
+  const value = Number(input?.valueAsNumber);
+  localStorage.setItem('total', value.toString());
+  calcularGanho(value);
 }
-input === null || input === void 0 ? void 0 : input.addEventListener('keyup', totalMudou);
-var greeter1 = /** @class */ (function () {
-    function greeter1(message) {
+
+
+  input?.addEventListener('keyup', totalMudou);
+*/
+Object.defineProperty(exports, "__esModule", { value: true });
+class greeter1 {
+    greeting;
+    constructor(message) {
         this.greeting = message;
     }
-    greeter1.prototype.greet = function () {
-        return "Sejam bem vindos, " + this.greeting;
-    };
-    return greeter1;
-}());
-var greeter = new greeter1("CDFs");
+    greet() {
+        return "Seja bem vindo, " + this.greeting;
+    }
+}
+let greeter = new greeter1("Usuário");
 console.log(greeter.greet());
+//# sourceMappingURL=script.js.map
