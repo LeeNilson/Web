@@ -16,6 +16,13 @@ const produtos = [
     },
     {
         nome:'Dark Souls', tipo:'Juegos'
+class greeter1{
+    greeting : string;
+    constructor(message:string){
+        this.greeting = message;
+    }
+    greet(){
+        return "Sejam bem vindos, " + this.greeting;
     }
 ]
 
@@ -29,7 +36,7 @@ listarProdutos(produtos);
 
 function normalizarTexto(texto:any){
     return texto.trim().toLowerCase(); // trim() - remove espaços do início E do fim
-} */
+} 
 
 const input = document.querySelector('input');
 const p = document.querySelector('p');
@@ -55,4 +62,16 @@ function totalMudou() {
 
 
   input?.addEventListener('keyup', totalMudou);
+*/
 
+class greeter1{
+    greeting : string;
+    constructor(message:string){
+        this.greeting = message;
+    }
+    greet(){
+        return "Sejam bem vindos, " + this.greeting;
+    }
+}
+let greeter = new greeter1("CDFs");
+console.log(greeter.greet());
