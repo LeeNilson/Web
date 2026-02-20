@@ -36,7 +36,7 @@ listarProdutos(produtos);
 
 function normalizarTexto(texto:any){
     return texto.trim().toLowerCase(); // trim() - remove espaços do início E do fim
-} 
+}
 
 const input = document.querySelector('input');
 const p = document.querySelector('p');
@@ -57,21 +57,21 @@ if (p) {
 function totalMudou() {
   const value = Number(input?.valueAsNumber);
   localStorage.setItem('total', value.toString());
-  calcularGanho(value);
+  calcularGanho(value);''
 }
 
 
   input?.addEventListener('keyup', totalMudou);
-*/
 
-class greeter1{
-    greeting : string;
-    constructor(message:string){
+*/
+var greeter1 = /** @class */ (function () {
+    function greeter1(message) {
         this.greeting = message;
     }
-    greet(){
+    greeter1.prototype.greet = function () {
         return "Seja bem vindo, " + this.greeting;
-    }
-}
-let greeter = new greeter1("Usuário");
+    };
+    return greeter1;
+}());
+var greeter = new greeter1("Usuário");
 console.log(greeter.greet());
