@@ -1,4 +1,3 @@
-"use strict";
 /*function soma(a:number,b:number){
     return a + b;
 }
@@ -37,7 +36,7 @@ listarProdutos(produtos);
 
 function normalizarTexto(texto:any){
     return texto.trim().toLowerCase(); // trim() - remove espaços do início E do fim
-}
+} 
 
 const input = document.querySelector('input');
 const p = document.querySelector('p');
@@ -58,22 +57,21 @@ if (p) {
 function totalMudou() {
   const value = Number(input?.valueAsNumber);
   localStorage.setItem('total', value.toString());
-  calcularGanho(value);
+  calcularGanho(value);''
 }
 
 
   input?.addEventListener('keyup', totalMudou);
+
 */
-Object.defineProperty(exports, "__esModule", { value: true });
-class greeter1 {
-    greeting;
-    constructor(message) {
+class greeter1{
+    greeting : string;
+    constructor(message:string){
         this.greeting = message;
     }
-    greet() {
+    greet(){
         return "Seja bem vindo, " + this.greeting;
     }
 }
 let greeter = new greeter1("Usuário");
 console.log(greeter.greet());
-//# sourceMappingURL=script.js.map
