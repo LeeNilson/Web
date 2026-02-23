@@ -1,0 +1,8 @@
+Selecionado o elemento 'p' através do querySelector, que lembrando retorna um único elemento (ou null)
+Adicionada a verificação de 'input ' verificando se retorna null e convertendo para number, utiliza-se Optional Chainning para se o input não existir, ele retornar 'undefined' em vez de travar o programa
+modifica-se a função 'calcularGanho' informando no parâmetro value que será recebido o tipo de dados á ser manipulado (:number)
+retira-se a seleção de elemento 'p' que já foi indicada no inicio do algoritmo, cria-se a constante resultado e passa o calculo matemático na constante, simplificando a modificação do item 'p' através do método innerText
+Na função totalMudou utiliza-se novamente Optinal Chain e o método 'valueAsNumber' na contante 'input'
+Ao utilizar o método setItem adiciona-se uma conversão da propriedade 'value' para string (value.toString())
+Utiliza-se Optional Chainning para verificar se input é válido (input?.addEventListener...)
+Optional Chainning funciona igual a ' if (input)'  mas optional chaining é mais conciso
