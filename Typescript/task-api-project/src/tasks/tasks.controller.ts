@@ -6,7 +6,7 @@ import { TaskStatus } from './enums/task-status.enum';
 import { UsersService } from 'src/users/users.service';
 
 @Injectable()
-export class TasksService {
+export class TasksController {
 
   private tasks: Task[] = [];
 
