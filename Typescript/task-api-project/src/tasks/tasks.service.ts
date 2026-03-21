@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 import {Task} from './models/task.model'
 import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskStatus } from './enums/task-status.enum';
-import { UsersService } from 'src/users/users.service';
+import { UsersService } from '../users/users.service';
 @Injectable()
 export class TasksService {
     private tasks: Task[] = [];
